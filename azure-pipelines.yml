@@ -21,9 +21,10 @@ steps:
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
     
-- task: AzureWebApp@1
+- task: AzureRmWebAppDeployment@4
   inputs:
+    ConnectionType: 'AzureRM'
     azureSubscription: 'secretconnection'
-    appType: webAppLinux
-    appName: 'deckerjava'
-    package: '$(System.DefaultWorkingDirectory)/**/SampleWebApp.war.war'
+    appType: 'webAppLinux'
+    WebAppName: 'deckerjava'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.war'
