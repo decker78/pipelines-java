@@ -26,4 +26,4 @@ steps:
     azureSubscription: 'secretconnection'
     appType: webAppLinux
     appName: 'deckerjava'
-    package: '$(System.DefaultWorkingDirectory)/**/*.war'
+    package: '$(System.DefaultWorkingDirectory)/**/SampleWebApp.war.war'
