@@ -20,3 +20,10 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
+    
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: 'secretconnection'
+    appType: webAppLinux
+    appName: '<Name of web app>'
+    package: '$(System.DefaultWorkingDirectory)/**/*.war'
